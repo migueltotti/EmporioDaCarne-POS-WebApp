@@ -1,3 +1,6 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using EmporioDaCarne_POS.Data;
 namespace EmporioDaCarne_POS
 {
     public class Program
@@ -5,6 +8,9 @@ namespace EmporioDaCarne_POS
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddDbContext<EmporioDaCarne_POSContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("EmporioDaCarne_POSContext") ?? throw new InvalidOperationException("Connection string 'EmporioDaCarne_POSContext' not found.")));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
