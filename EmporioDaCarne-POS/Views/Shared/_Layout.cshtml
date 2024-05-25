@@ -19,7 +19,7 @@
                 <div class="collapse navbar-collapse" id="navbarColor01">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" asp-area="" asp-controller="Home" asp-action="Index">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
                                 Home
                                 <span class="visually-hidden">(current)</span>
                             </a>
@@ -52,14 +52,14 @@
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div class="container vh-85">
+        <main role="main" class="pb-3 vh-85">
             @RenderBody()
         </main>
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
+        <div class="container pt-2">
             &copy; 2024 - EmporioDaCarne_POS - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
