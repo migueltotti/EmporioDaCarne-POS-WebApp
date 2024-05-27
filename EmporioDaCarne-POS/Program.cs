@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using EmporioDaCarne_POS.Data;
+using EmporioDaCarne_POS.Services;
 namespace EmporioDaCarne_POS
 {
     public class Program
@@ -11,6 +12,8 @@ namespace EmporioDaCarne_POS
 
             builder.Services.AddDbContext<EmporioDaCarne_POSContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("EmporioDaCarne_POSContext") ?? throw new InvalidOperationException("Connection string 'EmporioDaCarne_POSContext' not found.")));
+
+            builder.Services.AddScoped<UserService>();
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
@@ -34,7 +37,7 @@ namespace EmporioDaCarne_POS
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Users}/{action=Index}/{id?}");
 
             app.Run();
         }

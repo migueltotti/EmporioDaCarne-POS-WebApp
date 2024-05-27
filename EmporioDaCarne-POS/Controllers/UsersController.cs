@@ -7,22 +7,62 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EmporioDaCarne_POS.Data;
 using EmporioDaCarne_POS.Models;
+using NuGet.Versioning;
+using EmporioDaCarne_POS.Services;
 
 namespace EmporioDaCarne_POS.Controllers
 {
     public class UsersController : Controller
     {
         private readonly EmporioDaCarne_POSContext _context;
+        private readonly UserService _userService;
 
-        public UsersController(EmporioDaCarne_POSContext context)
+        public UsersController(EmporioDaCarne_POSContext context, UserService userService)
         {
             _context = context;
+            _userService = userService;
         }
 
         // GET: Users
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string? email, string? password)
         {
-            return View(await _context.User.ToListAsync());
+            /*ViewData["email"] = string.Empty;
+            ViewData["password"] = string.Empty;
+
+            if (email == null && password == null)
+            {
+                return View();
+            }
+
+            var result = await _context.User.FirstOrDefaultAsync(x => x.Email == email && x.Password == password);
+
+            if(result == null)
+            {
+                ViewData["authenticated"] = "NotPassed";
+                return View();
+            }
+
+
+            ViewData["authenticated"] = "Passed";
+            return RedirectToAction("Index", "Home");*/
+
+            var result = await _userService.Authenticate(email, password);
+
+            if (result != null)
+            {
+                ViewData["authenticated"] = "Passed";
+                return RedirectToAction("Index", "Home");
+            }
+
+            if(email != null && password != null && result == null)
+            {
+                ViewData["authenticated"] = "NotPassed";
+            }
+
+            ViewData["email"] = string.Empty;
+            ViewData["password"] = string.Empty;
+
+            return View();
         }
 
         // GET: Users/Details/5

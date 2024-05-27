@@ -235,6 +235,11 @@ hr {
     font-size: calc(1.375rem + 1.5vw)
 }
 
+.h1-login {
+    color: #f2c744;
+    font-size: 24px;
+}
+
 @media (min-width:1200px) {
     .h1, h1 {
         font-size: 2.5rem
@@ -2212,6 +2217,13 @@ progress {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch
     }
+}
+
+@media (max-width: 768px) {
+    main.form-signin.w-login.m-auto.h-100.align-content-center{
+        width: 50% !important
+    }
+    
 }
 
 @media (max-width:991.98px) {
@@ -8261,6 +8273,10 @@ textarea.form-control-lg {
     width: auto !important
 }
 
+.w-login {
+    width: 50vh !important
+}
+
 .mw-100 {
     max-width: 100% !important
 }
@@ -8268,6 +8284,8 @@ textarea.form-control-lg {
 .vw-100 {
     width: 100vw !important
 }
+
+
 
 .min-vw-100 {
     min-width: 100vw !important
@@ -8303,6 +8321,10 @@ textarea.form-control-lg {
 
 .vh-85 {
     height: 85vh !important
+}
+
+.vh-login {
+    height: 94vh !important
 }
 
 .min-vh-100 {
