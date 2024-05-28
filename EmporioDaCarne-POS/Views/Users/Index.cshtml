@@ -8,8 +8,8 @@
 }
 
 <main class="form-signin w-login m-auto h-100 align-content-center">
-    <form class="" asp-action="Index">
-        @*<img class="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">*@
+    <form class="form-control" asp-action="Index">
+        <img class="mb-4" src="../../../../Images/logo-emporio-da-carne.png" alt="" width="113" height="57">
         <h1 class="h1 fw-bold mb-5 h1-login">@ViewData["Aplication"]</h1>
 
         <h3 class="h3 mb-2 fw-normal fs-4">Sign in</h3>
@@ -21,7 +21,7 @@
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
         <div class="form-floating my-2">
-            <input asp-for="Password" value="@ViewData["password"]" class="form-control" id="floatingPassword" placeholder="Password">
+            <input asp-for="Password" type="password" value="@ViewData["password"]" class="form-control" id="floatingPassword" placeholder="Password">
             <label asp-for="Password">Password</label>
             <span asp-validation-for="Password" class="text-danger"></span>
         </div>

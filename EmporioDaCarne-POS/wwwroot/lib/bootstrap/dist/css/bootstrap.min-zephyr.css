@@ -193,7 +193,9 @@
 }
 
 *, ::after, ::before {
-    box-sizing: border-box
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 @media (prefers-reduced-motion:no-preference) {
@@ -212,7 +214,19 @@ body {
     text-align: var(--bs-body-text-align);
     background-color: var(--bs-body-bg);
     -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: transparent
+    -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Opcional: impede a rolagem */
+}
+
+.body-login {
+    background-image: url(../../../../Images/background-login-page.jpg);
+    background-position: center;
+    background-size: cover;
 }
 
 hr {
@@ -2219,7 +2233,7 @@ progress {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 685px) {
     main.form-signin.w-login.m-auto.h-100.align-content-center{
         width: 50% !important
     }
@@ -2282,17 +2296,17 @@ progress {
 .form-control {
     display: block;
     width: 100%;
-    padding: .3rem 1rem;
+    padding: 1rem;
     font-size: .875rem;
     font-weight: 400;
     line-height: 1.5;
-    color: var(--bs-body-color);
+    color: #e9ecef;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-color: var(--bs-body-bg);
+    background-color: #343a40;
     background-clip: padding-box;
-    border: var(--bs-border-width) solid var(--bs-border-color);
+    border: var(--bs-border-width) solid #f4bd61;
     border-radius: var(--bs-border-radius);
     box-shadow: 0 1px 2px rgba(0,0,0,.05);
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out
@@ -2313,8 +2327,8 @@ progress {
     }
 
 .form-control:focus {
-    color: var(--bs-body-color);
-    background-color: var(--bs-body-bg);
+    color: #e9ecef;
+    background-color: #343a40;
     border-color: #9aacf3;
     outline: 0;
     box-shadow: 0 1px 2px rgba(0,0,0,.05),0 0 0 .25rem rgba(52,89,230,.25)
@@ -2604,12 +2618,12 @@ textarea.form-control-lg {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-color: var(--bs-form-check-bg);
+    /*background-color: var(--bs-form-check-bg);*/
     background-image: var(--bs-form-check-bg-image);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    border: var(--bs-border-width) solid var(--bs-border-color);
+    border: var(--bs-border-width) solid #f4bd61;
     -webkit-print-color-adjust: exact;
     color-adjust: exact;
     print-color-adjust: exact
@@ -2634,8 +2648,8 @@ textarea.form-control-lg {
     }
 
     .form-check-input:checked {
-        background-color: #3459e6;
-        border-color: #3459e6
+        background-color: #343a40;
+        border-color: #f4bd61
     }
 
         .form-check-input:checked[type=checkbox] {
@@ -2903,7 +2917,7 @@ textarea.form-control-lg {
 }
 
 .form-floating > .form-control-plaintext ~ label, .form-floating > .form-control:focus ~ label, .form-floating > .form-control:not(:placeholder-shown) ~ label, .form-floating > .form-select ~ label {
-    color: rgba(var(--bs-body-color-rgb),.65);
+    color: #e9ecef;
     transform: scale(.85) translateY(-.5rem) translateX(.15rem)
 }
 
@@ -2923,8 +2937,8 @@ textarea.form-control-lg {
     z-index: -1;
     height: 1.5em;
     content: "";
-    background-color: var(--bs-body-bg);
     border-radius: var(--bs-border-radius)
+    /*background-color: var(--bs-body-bg);*/
 }
 
 .form-floating > .form-control:-webkit-autofill ~ label {
@@ -8100,7 +8114,7 @@ textarea.form-control-lg {
 }
 
 .border-top {
-    border-top: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important
+    border-top: var(--bs-border-width) var(--bs-border-style) #f4bd61 !important
 }
 
 .border-top-0 {
@@ -13679,6 +13693,17 @@ thead th {
 
 .modal-footer {
     background-color: var(--bs-tertiary-bg)
+}
+
+.footer-login {
+    background-color: var(--bs-black);
+    color: #f4bd61;
+    position: relative;
+    top: 16px;
+}
+
+.footer-text-login {
+    opacity: 1;
 }
 
 .modal-content {
