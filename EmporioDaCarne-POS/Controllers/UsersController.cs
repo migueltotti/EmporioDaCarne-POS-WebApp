@@ -26,30 +26,11 @@ namespace EmporioDaCarne_POS.Controllers
         // GET: Users
         public async Task<IActionResult> Index(string? email, string? password)
         {
-            /*ViewData["email"] = string.Empty;
-            ViewData["password"] = string.Empty;
-
-            if (email == null && password == null)
-            {
-                return View();
-            }
-
-            var result = await _context.User.FirstOrDefaultAsync(x => x.Email == email && x.Password == password);
-
-            if(result == null)
-            {
-                ViewData["authenticated"] = "NotPassed";
-                return View();
-            }
-
-
-            ViewData["authenticated"] = "Passed";
-            return RedirectToAction("Index", "Home");*/
-
             var result = await _userService.Authenticate(email, password);
 
             if (result != null)
             {
+                AuthenticationService.SetTrueAuthorization();
                 ViewData["authenticated"] = "Passed";
                 return RedirectToAction("Index", "Home");
             }

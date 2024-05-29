@@ -1,4 +1,5 @@
 using EmporioDaCarne_POS.Models;
+using EmporioDaCarne_POS.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -15,11 +16,25 @@ namespace EmporioDaCarne_POS.Controllers
 
         public IActionResult Index()
         {
+            var result = AppAuthentication();
+            
+            if(result != null)
+            {
+                return result;
+            }
+
             return View();
         }
 
         public IActionResult Privacy()
         {
+            var result = AppAuthentication();
+
+            if (result != null)
+            {
+                return result;
+            }
+
             return View();
         }
 
@@ -27,6 +42,16 @@ namespace EmporioDaCarne_POS.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public RedirectToActionResult AppAuthentication()
+        {
+            if (!AuthenticationService.GetAuthorization())
+            {
+                return RedirectToAction("Index", "Users");
+            }
+
+            return null;
         }
     }
 }

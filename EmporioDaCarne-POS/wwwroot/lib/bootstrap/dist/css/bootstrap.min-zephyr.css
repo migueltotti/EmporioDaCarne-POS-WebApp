@@ -47,6 +47,7 @@
     --bs-red-adobe: 191,56,26;
     --bs-orange-adobe: 242,122,53;
     --bs-yellow-adobe: 242,226,5;
+    --bs-yellow-figma: 254,213,3;
     --bs-grey-adobe: 81,83,89;
     --bs-primary-rgb: 52,89,230;
     --bs-secondary-rgb: 255,255,255;
@@ -4296,7 +4297,7 @@ textarea.form-control-lg {
     padding-bottom: var(--bs-navbar-brand-padding-y);
     margin-right: var(--bs-navbar-brand-margin-end);
     font-size: var(--bs-navbar-brand-font-size);
-    color: yellow;
+    color: rgba(64, 0, 0);
     /*color: var(--bs-navbar-brand-color);*/
     text-decoration: none;
     white-space: nowrap
@@ -4348,7 +4349,7 @@ textarea.form-control-lg {
     padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x);
     font-size: var(--bs-navbar-toggler-font-size);
     line-height: 1;
-    color: var(--bs-navbar-color);
+    color: #4b0202;
     background-color: transparent;
     border: var(--bs-border-width) solid var(--bs-navbar-toggler-border-color);
     border-radius: var(--bs-navbar-toggler-border-radius);
@@ -4745,7 +4746,7 @@ textarea.form-control-lg {
 }
 
 [data-bs-theme=dark] .navbar-toggler-icon {
-    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")
+    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2864, 0, 0, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='5' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")
 }
 
 .card {
@@ -9420,7 +9421,7 @@ textarea.form-control-lg {
 
 .bg-primary {
     --bs-bg-opacity: 1;
-    background-color: rgba(var(--bs-red-adobe),var(--bs-bg-opacity)) !important
+    background-color: rgba(208, 175, 0, 1);
 }
 
 .bg-secondary {
