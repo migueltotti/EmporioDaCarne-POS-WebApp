@@ -230,6 +230,88 @@ html, body {
     background-size: cover;
 }
 
+.pos-page {
+    background-color: white;
+    width: 100% !important;
+    height: 100% !important
+}
+
+.lista {
+    background-color: red;
+    height: 410px;
+    width: 380px;
+    margin: 0px 0px 5px;
+    text-align: center;
+    align-content: center;
+    position: fixed;
+    top: 70px;
+    left: 40px;
+}
+
+.salvar {
+    background-color: blue;
+    height: 60px;
+    width: 60px;
+    margin: 0px 5px 5px;
+    text-align: center;
+    align-content: center;
+    position: fixed;
+    bottom: 100px;
+    left: 35px;
+}
+
+.deletar {
+    background-color: black;
+    height: 60px;
+    width: 60px;
+    margin: 0px 5px 5px;
+    text-align: center;
+    align-content: center;
+    position: fixed;
+    left: 35px;
+    bottom: 34px;
+}
+
+.adicionar {
+    background-color: green;
+    height: 60px;
+    width: 310px;
+    margin: 0px 5px 5px;
+    text-align: center;
+    align-content: center;
+    position: fixed;
+    bottom: 100px;
+    left: 105px;
+}
+
+.remover {
+    background-color: red;
+    height: 60px;
+    width: 310px;
+    margin: 0px 5px 5px;
+    text-align: center;
+    align-content: center;
+    position: fixed;
+    bottom: 34px;
+    left: 105px;
+}
+
+.produtos {
+    background-color: brown;
+    height: 545px;
+    width: 680px;
+    margin: 0px 5px 5px;
+    text-align: center;
+    align-content: center;
+    position: fixed;
+    top: 70px;
+    right: 40px;
+}
+
+.lista, .produtos, .salvar, .adicionar, .remover, .deletar {
+    color: white
+}
+
 hr {
     margin: 1rem 0;
     color: inherit;
@@ -3954,9 +4036,9 @@ textarea.form-control-lg {
     padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
     clear: both;
     font-weight: 400;
-    color: var(--bs-dropdown-link-color);
+    color: var(--bs-yellow);
     text-align: inherit;
-    text-decoration: none;
+    text-decoration: underline;
     white-space: nowrap;
     background-color: transparent;
     border: 0;
@@ -4131,8 +4213,7 @@ textarea.form-control-lg {
     padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
     font-size: var(--bs-nav-link-font-size);
     font-weight: var(--bs-nav-link-font-weight);
-    color: var(--bs-yellow);
-    /*color: var(--bs-nav-link-color);*/
+    color: rgba(64, 0, 0);
     text-decoration: none;
     background: 0 0;
     border: 0;
@@ -4943,6 +5024,52 @@ textarea.form-control-lg {
                 .card-group > .card:not(:first-child) .card-footer, .card-group > .card:not(:first-child) .card-img-bottom {
                     border-bottom-left-radius: 0
                 }
+}
+
+.card-small {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    background-color: lightslategrey;
+}
+
+.card-small-home {
+    /*display: flex;
+    max-width: 431px;
+    background-color: lightslategrey;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 0px 0px 10px;
+    height: 100% !important;*/
+    /*display: flex;*/
+
+    max-width: 431px;
+    background-color: lightslategrey;
+    /*flex-direction: column;
+    align-items: flex-start;*/
+    padding: 30px 10px 0px;
+    /* height: 100% !important; */
+    float: left;
+}
+
+.card-md-home {
+    /*display: flex;
+    max-width: 500px;
+    background-color: lightslategrey;
+    flex-direction: column;
+    align-items: center;
+    padding: 49px 10px 0px;
+    height: 100% !important;
+    
+    display: flex;*/
+    max-width: 500px;
+    background-color: lightslategrey;
+    /*flex-direction: column;
+    align-items: center;*/
+    padding: 30px 10px 0px;
+    height: 535px !important;
+    float: left;
 }
 
 .accordion {
@@ -8318,6 +8445,14 @@ textarea.form-control-lg {
     height: 75% !important
 }
 
+.h-home {
+    height: 86.7% !important
+}
+
+.h-home-main {
+    height: 100% !important
+}
+
 .h-100 {
     height: 100% !important
 }
@@ -8332,10 +8467,6 @@ textarea.form-control-lg {
 
 .vh-100 {
     height: 100vh !important
-}
-
-.vh-85 {
-    height: 85vh !important
 }
 
 .vh-login {
@@ -13699,8 +13830,11 @@ thead th {
 .footer-login {
     background-color: var(--bs-black);
     color: #f4bd61;
-    position: relative;
-    top: 16px;
+    width: 100%;
+    height: 29px;
+    margin: auto;
+    bottom: 0px;
+    position: fixed;
 }
 
 .footer-text-login {
