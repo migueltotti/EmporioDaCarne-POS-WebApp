@@ -7395,13 +7395,13 @@ textarea.form-control-lg {
     display: flex;
     flex-direction: column;
     max-width: 100%;
-    color: var(--bs-offcanvas-color);
+    color: rgba(64, 0, 0);
     visibility: hidden;
-    background-color: var(--bs-offcanvas-bg);
+    background-color: rgba(208, 175, 0, 1);
     background-clip: padding-box;
     outline: 0;
     box-shadow: var(--bs-offcanvas-box-shadow);
-    transition: var(--bs-offcanvas-transition)
+    transition: var(--bs-offcanvas-transition);
 }
 
 @media (prefers-reduced-motion:reduce) {
@@ -9617,7 +9617,7 @@ textarea.form-control-lg {
 
 .bg-body-tertiary {
     --bs-bg-opacity: 1;
-    background-color: rgba(var(--bs-tertiary-bg-rgb),var(--bs-bg-opacity)) !important
+    background-color: rgba(208, 175, 0, 1) !important
 }
 
 .bg-opacity-10 {
